@@ -115,12 +115,12 @@ fn get_sym_offset(name: &str) -> usize {
 }
 ```
 
-For this, I let goblin do 99% of the work. It parses the file for me and I just have to use iterators to search the dynamic
+For this, I let [goblin](https://docs.rs/goblin) do 99% of the work. It parses the file for me and I just have to use iterators to search the dynamic
 exports for a symbol with a matching name then get the `st_value` for it (which, in this context, is an offset from the base address).
 [Recommended reading on what st_name and st_value do](https://refspecs.linuxbase.org/elf/gabi4+/ch4.symtab.html).
 No point memorizing information that is just a google away!
 
-(Feel free to PR support for your platform if you want an excuse to learn globlin! It's a great crate.)
+(Feel free to PR support for your platform if you want an excuse to learn globlin! It's a great crate and seems like a great way to learn about executable formats if you aren't already familiar with them!)
 
 Oh! I almost forgot. In `.cargo/config` we need a linker flag to tell it to mass export symbols. There are other
 ways to get around this, but frankly nobody should ever be doing this so we'll just do it the dirty and easy way:
