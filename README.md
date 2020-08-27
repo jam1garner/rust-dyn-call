@@ -15,6 +15,10 @@ Example:
 
 ```
 
+## Why?
+
+![](https://cdn.discordapp.com/attachments/376971848555954187/748397660582707234/unknown.png)
+
 ## How does it work?
 
 The interface for it is a rather simple macro:
